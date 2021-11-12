@@ -1,13 +1,147 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 600px;
+  margin: 10px  auto;
+  border: 2px solid rgb(0, 255, 191);
+  padding: 10px 50px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+  
+}
+
+
+.task {
+  background-color: rgb(161, 160, 160);
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.close {
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+.reminder {
+  border-left: 5px solid green;
+}
+
+
+.form-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-size: 18px;
+  margin: 15px 0 5px 0 ;
+}
+
+.form-control input {
+  padding: 7px;
+}
+
+.submit {
+  display: block;
+  background: green;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.form-control-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.form-control-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(90, 90, 90);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
